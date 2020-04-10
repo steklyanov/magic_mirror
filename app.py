@@ -1,6 +1,7 @@
+import sys
 from settings import app, db
 from router import *
-from models import Todo
+from models.models import Todo
 from serializer import *
 db.create_all()
 db.session.commit()

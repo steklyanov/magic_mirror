@@ -1,5 +1,5 @@
 from flask_restful import Resource, reqparse
-from models import Todo
+from models.models import Todo
 from settings import db
 from serializer import todo_serializer, todos_serializer
 
