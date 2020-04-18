@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  backend:
+    build:
+      context: ./backend/
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/backend
+    command: >
+      sh -c "python app.py"
+
+  frontend:
+    build: ./frontend/
+    command: yarn dev
+    volumes:
+      - ./shop_detection:/shop_detection
+      - ./frontend:/frontend
+    ports:
+      - "3000:3000"
+    restart: "always"
