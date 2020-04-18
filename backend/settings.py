@@ -4,9 +4,13 @@ import os
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from flask_migrate import Migrate, Manager, MigrateCommand
+from flask_cors import CORS
 
 app = Flask(__name__)
 
+# CORS enable
+# CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 # API SETTINGS
 api = Api(app)
 # DATABASE SETTINGS
